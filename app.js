@@ -17,6 +17,6 @@ app.post('/read',(req,res)=>{
 
     res.json(bookObject)
 })
-app.listen(process.env.PORT||5000,()=>{
-    console.log("server started at http://localhost:5000/read")
+app.listen(process.env.PORT||6000,()=>{
+    console.log("server started at http://localhost:6000/read")
 })
