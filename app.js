@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyparser = require('body-parser')
 var mongoose = require('mongoose');
-var bookModel=require('./model/bookModel')
+var {bookModel}=require('./models/bookModel')
 var app = express();
 app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())
