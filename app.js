@@ -1,5 +1,7 @@
 var express = require('express');
 var bodyparser = require('body-parser')
+var mongoose = require('mongoose');
+var bookModel=require('./model/bookModel')
 var app = express();
 app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())
@@ -11,9 +13,10 @@ app.post('/read',(req,res)=>{
     var getCategory=req.body.cat;
     var getAuthor=req.body.author;
     var getPrice=req.body.price;
+    var bookObject=new bookModel(req.body);
 
-    res.json({"name":getName,"category":getCategory,"author":getAuthor,"price":getPrice})
+    res.json(bookObject)
 })
-app.listen(process.env.PORT||4000,()=>{
-    console.log("server started at http://localhost:4000/read")
+app.listen(process.env.PORT||5000,()=>{
+    console.log("server started at http://localhost:5000/read")
 })
