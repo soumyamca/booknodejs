@@ -14,6 +14,6 @@ app.post('/read',(req,res)=>{
 
     res.json({"name":getName,"category":getCategory,"author":getAuthor,"price":getPrice})
 })
-app.listen(3010,()=>{
-    console.log("server started at http://localhost:3010/read")
+app.listen(process.env.PORT||4000,()=>{
+    console.log("server started at http://localhost:4000/read")
 })
